@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import netlify from '@astrojs/netlify';
 import react from "@astrojs/react";
 
 import sitemap from "@astrojs/sitemap";
@@ -25,9 +25,5 @@ export default defineConfig({
     }
   })],
   output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  })
+  adapter: netlify()
 });
